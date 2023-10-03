@@ -580,7 +580,7 @@
 //         total += args[i];
 //     }
 //     return total / args.length;
-    
+
 // }
 // const calcAverage = (...args) => {
 //     let total = 0;
@@ -670,7 +670,6 @@
 //     return acc;
 // },{})
 
-
 // console.log(result);
 
 // const arr = ['Honda', 'Audi', 'BMW', 'Skoda', 'Ford', 'Renault'];
@@ -694,3 +693,105 @@
 // }
 // console.log(checkObj({ gift: "pony", pet: "kitten", bed: "sleigh" }, "gift"))
 // console.log(checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house"))
+
+// const chopShop = {
+//     stones: [
+//         { name: 'Emerald', price: 1300, quantity: 4 },
+//         { name: 'Diamond', price: 2700, quantity: 3 },
+//         { name: 'Supphire', price: 1400, quantity: 7 },
+//         { name: 'Ruby', price: 800, quantity: 2 },
+//     ],
+//     calcTotalPrice(stoneName) {
+//         const {price,quantity}= this.stones.find(({name})=>name===stoneName)
+//         return price * quantity;
+//     }
+// }
+// console.log(chopShop.calcTotalPrice('Emerald'));
+// console.log(chopShop.calcTotalPrice('Diamond'));
+// console.log(chopShop.calcTotalPrice('Supphire'));
+// console.log(chopShop.calcTotalPrice('Ruby'));
+
+// const shop2 = {
+//     stones: [
+//         { name: 'Щебінь', price: 200, quantity: 5 },
+//         { name: 'Пісок', price: 100, quantity: 3 },
+//     ]
+// };
+// console.log(chopShop.calcTotalPrice.call(shop2,'Щебінь'))
+
+// const phonebook = {
+//   contacts: [],
+//   add(contact) {
+//     const newContact = {
+//       list: "default",
+//       ...contact,
+//       id: this.generateId(),
+//       createdAt: this.getDate(),
+//     };
+//     this.contacts.push(newContact);
+//     return this.contacts;
+//   },
+//   generateId() {
+//     return "_" + Math.random().toString(36).substr(2, 9);
+//   },
+//   getDate() {
+//     return Date.now();
+//   },
+// };
+// console.log(
+//   phonebook.add({
+//     name: "Mango",
+//     email: "mango@mail.com",
+//     list: "friends",
+//   })
+// );
+
+// const calculator = {
+//     read(a, b) {
+//         this.a = a,
+//         this.b = b
+//     },
+//     add() {
+//         return (this.a??0) + (this.b??0);
+//     },
+//     mult() {
+//         return(this.a??1)*(this.b??1)
+//     }
+// }
+// calculator.read(2);
+// console.log(calculator.add());
+// console.log(calculator.mult());
+// console.log(calculator)
+
+// class User{
+//     #location
+//     constructor({name,email,age,location,password='qwerty111'}={}) {
+//         this.name = name;
+//         this.email = email;
+//         this.age = age;
+//         this.#location = location;
+//         this.password=password
+//     }
+//     sayHello() {
+//         console.log(this.name)
+//     }
+//     get locale() {
+//         return this.#location;
+//     }
+//     set locale(city) {
+//         const value = prompt('Enter password')
+//         if(value===this.password)
+//         {
+//             this.#location = city;
+//             console.log(this.#location)
+//         } else { console.log('Хацкер?') }
+//     }
+// }
+
+// const userA = new User({ age: 20, name: "Mango", email: 'mango@gmail.com', location: 'Lviv' });
+// userA.sayHello()
+// console.log(userA.locale)
+// userA.locale='Dnipro'
+// console.log(userA)
+
+// 
